@@ -1,11 +1,10 @@
-export EXE := mat
-export C_FILES := $(wildcard *.cpp)
-export O_FILES := $(patsubst %.cpp, %.o, $(C_FILES))
+all:
+	mkdir binnary/
+	cd src/ && make
+	cd src/ && mv mat ../binnary
+	cd src/ && make clean ../binnary
+clean:
+	rm -r binnary 
 
-$(EXE) : $(O_FILES)
-	g++ $^ -o $@
-%.o : %.cpp
-	g++ -c $^ -o $@
-clean :
-	rm *.o $(EXE)
+
 
