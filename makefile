@@ -1,10 +1,8 @@
 all:
-	mkdir binnary/
+	mkdir bin/
 	cd src/ && make
-	cd src/ && mv mat ../binnary
-	cd src/ && make clean ../binnary
+	cd src/ && make clean
 clean:
-	rm -r binnary 
-
+	rm -r bin
 
 
